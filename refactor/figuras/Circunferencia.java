@@ -4,6 +4,7 @@ public class Circunferencia {
     private double radio;
     private String color;  // Convertir color en atributo de clase
 
+    public static final double PI = 3.1416;
     public Circunferencia(double radio) {
         this.radio = radio;
         this.color = "rojo";  // Inicializar en el constructor
@@ -13,7 +14,7 @@ public class Circunferencia {
         double d = 2 * radio;  // Extracción del cálculo del diámetro
         System.out.println("Diámetro: " + d);
         System.out.println("Color: " + color);
-        double area = 2 * 3.1416 * radio * radio;
+        double area = 2 * PI * radio * radio;
         System.out.println(area);
     }
 
