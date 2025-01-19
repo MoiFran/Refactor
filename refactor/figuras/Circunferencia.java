@@ -4,18 +4,19 @@ public class Circunferencia {
     private double radio;
     private String color;  // Convertir color en atributo de clase
 
-    public static final double PI = 3.1416;
     public Circunferencia(double radio) {
         this.radio = radio;
         this.color = "rojo";  // Inicializar en el constructor
     }
 
+    public double calcularArea() {
+        return 3.1416 * radio * radio;
+    }
+
     public void imprimir() {
-        double d = 2 * radio;  // Extracción del cálculo del diámetro
-        System.out.println("Diámetro: " + d);
+        System.out.println("Diámetro: " + (2 * radio));
         System.out.println("Color: " + color);
-        double area = 2 * PI * radio * radio;
-        System.out.println(area);
+        System.out.println("Área: " + (3.1416 * radio * radio));
     }
 
     public double getRadio() {
@@ -34,10 +35,10 @@ public class Circunferencia {
         this.color = color;
     }
 
-    public boolean esIgual(Circunferencia otro, boolean conDecimales) {
+    public boolean esIgual(boolean considerarDecimales, Circunferencia otraCircunferencia) {
         double radio1 = this.radio;
-        double radio2 = otro.getRadio();
-        if (conDecimales) {
+        double radio2 = otraCircunferencia.getRadio();
+        if (considerarDecimales) {
             return radio1 == radio2;
         } else {
             return Math.abs(radio1 - radio2) < 1;
