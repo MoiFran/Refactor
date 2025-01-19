@@ -1,42 +1,44 @@
 package figuras;
 
 public class Circunferencia {
-    private double rad;
+    private double radio;
+    private String color;  // Convertir color en atributo de clase
 
     public Circunferencia(double radio) {
-        this.rad = radio;
+        this.radio = radio;
+        this.color = "rojo";  // Inicializar en el constructor
     }
 
     public void imprimir() {
-        String color = "rojo";
-        System.out.println("Di�metro: " + 2 * rad);
+        System.out.println("Diámetro: " + 2 * radio);
         System.out.println("Color: " + color);
-        double area = 2 * 3.1416 * rad * rad;
+        double area = 2 * 3.1416 * radio * radio;
         System.out.println(area);
     }
 
-	public double getRad() {
-		return rad;
-	}
+    public double getRadio() {
+        return radio;
+    }
 
-	public void setRad(double rad) {
-		this.rad = rad;
-	}
+    public void setRadio(double radio) {
+        this.radio = radio;
+    }
 
-	public boolean esIgual(Circunferencia otro, boolean conDecimales) {
-        double radio1 = this.rad;
-        double radio2 = otro.getRad();
+    public String getColor() {  // Getter para color
+        return color;
+    }
+
+    public void setColor(String color) {  // Setter para color
+        this.color = color;
+    }
+
+    public boolean esIgual(Circunferencia otro, boolean conDecimales) {
+        double radio1 = this.radio;
+        double radio2 = otro.getRadio();
         if (conDecimales) {
-            if (radio1 == radio2)
-                return true;
-            else
-                return false;
+            return radio1 == radio2;
         } else {
-            if (Math.abs(radio1 - radio2) < 1)
-                return true;
-            else
-                return false;
+            return Math.abs(radio1 - radio2) < 1;
         }
     }
 }
-
