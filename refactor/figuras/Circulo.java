@@ -1,4 +1,4 @@
-package utilidades;
+package figuras;
 
 public class Circulo {
     private double rad;
